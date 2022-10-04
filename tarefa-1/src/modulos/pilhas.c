@@ -84,7 +84,6 @@ void imprimirPSE(PSE *stack) {
   }
   aux = pseReversa->frente;
 
-  printf("Pilha Encadeada\n");
   printf("[");
   while (aux != NULL) {
     printf("%.2lf", aux->d);
@@ -92,18 +91,17 @@ void imprimirPSE(PSE *stack) {
       printf("<-");
     aux = aux->ant;
   }
-  printf(" (Head)]\n\n");
+  printf(" (Frente)]\n\n");
   excluirPSE(pseReversa);
 }
 
 
 void imprimirPE(PE *pilha) {
-  printf("Pilha sobre vetor\n");
   printf("[");
   for (int i = 0; i < pilha->qtdElems; i++) {
     printf("%.2lf", pilha->vet[i]);
     if (i != pilha->qtdElems - 1)
       printf(",");
   }
-  printf(" (Head)]\n\n");
+  printf(" (Frente)]\n\n");
 }

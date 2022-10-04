@@ -1,5 +1,10 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
 #include "../headers/pilhas.h"
+#include "../headers/posfixo.h"
+#include "../headers/uteis.h"
 
 int caractereOperador(char c) {
   int boolean = (
@@ -35,10 +40,10 @@ double obterResultado(PSE *pilha, char *str) {
   for (int i = 0; i < strlen(str); i++) {
     if (str[i] >= '0' && str[i] <= '9') {
       empilharPSE(pilha, (double)(charToInt(str[i])));
-    } else if (isOperator(str[i])) {
+    } else if (caractereOperador(str[i])) {
       double d2 = desempilharPSE(pilha);
       double d1 = desempilharPSE(pilha);
-      double result = applyOperation(str[i], d1, d2);
+      double result = aplicarOperacao(str[i], d1, d2);
       empilharPSE(pilha, result);
     }
   }

@@ -1,0 +1,5 @@
+Rode esse comando no terminal, a partir do diretório desse arquivo (compilar.txt):
+
+gcc src/index.c src/modulos/* -lm -o index.exe && ./index.exe
+
+(Testado no linux ubuntu 22.04)
